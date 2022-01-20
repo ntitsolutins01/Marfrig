@@ -1,0 +1,191 @@
+﻿<!doctype html>
+<html class="sidebar-light sidebar-left-big-icons">
+<head>
+
+    <!-- Basic -->
+    <title>@ViewData["Title"] - Titan</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="keywords" content="BancoPan" />
+    <meta name="description" content="Titan - Cockpit">
+    <meta name="author" content="NtitSolutions|Tegra">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS-->
+    <link rel="stylesheet" href="~/vendor/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/vendor/font-awesome/css/font-awesome.css" />
+
+    <!-- Specific Page Vendor CSS -->
+    <link rel="stylesheet" href="~/vendor/pnotify/pnotify.custom.css" />
+    @RenderSection("CssSpecificVendor", required: false)
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/css/theme.css" />
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="~/css/skins/default.css" />
+
+    <!-- Head Libs -->
+    <script src="~/vendor/modernizr/modernizr.js"></script>
+
+</head>
+<body>
+    <section class="body">
+        <!-- start: header -->
+        <header class="header">
+            <div class="logo-container">
+                <a href="#" class="logo">
+                    <img src="~/images/Logo-BG-Marfrig.png" style="height: 75px;" />
+                </a>
+                <div class="d-md-none toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">
+                    <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+                </div>
+            </div>
+
+            <!-- start: search & user box -->
+            <div class="header-right">
+
+                <span class="separator"></span>
+
+                <div id="userbox" class="userbox">
+                    <a href="#" data-toggle="dropdown">
+
+                        <div class="profile-info" data-lock-name="Administrador" data-lock-email="admin@admin.com">
+                            <h2 class="name">Fábio de Souza Muniz</h2>
+
+                            <span class="role">Senior Developer/Architect</span>
+                        </div>
+
+                        <i class="fa custom-caret"></i>
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <ul class="list-unstyled mb-2">
+                            <li>
+                                &nbsp;
+                                &nbsp;
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="#"><i class="fa fa-paper-plane"></i> Release 1.0.0</a>
+                            </li>
+                            <li>
+                                <a role="menuitem" tabindex="-1" href="#"><i class="fa fa-power-off"></i> Sair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end: search & user box -->
+        </header>
+        <!-- end: header -->
+
+        <div class="inner-wrapper">
+            <!-- start: sidebar -->
+            <aside id="sidebar-left" class="sidebar-left">
+
+                <div class="sidebar-header">
+                    <div class="sidebar-title">
+                        Navegação
+                    </div>
+                    <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+                        <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
+                    </div>
+                </div>
+
+                <div class="nano">
+                    <div class="nano-content">
+                        <nav id="menu" class="nav-main" role="navigation">
+
+                            <ul class="nav nav-main">
+                                <li class="nav-parent">
+                                    <a class="nav-link" href="@Url.Action("Compra","Gado")">
+                                        <i class="fa fa-usd" aria-hidden="true"></i>
+                                        <span>Compra</span>
+                                    </a>
+                                </li>
+                                <li class="nav-parent">
+                                    <a class="nav-link" href="@Url.Action("Consulta","Gado")">
+                                        <i class="fa fa-search" aria-hidden="true"></i>
+                                        <span>Consulta</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+
+                    </div>
+
+                    <script>
+                        // Maintain Scroll Position
+                        if (typeof localStorage !== 'undefined') {
+                            if (localStorage.getItem('sidebar-left-position') !== null) {
+                                var initialPosition = localStorage.getItem('sidebar-left-position'),
+                                    sidebarLeft = document.querySelector('#sidebar-left .nano-content');
+
+                                sidebarLeft.scrollTop = initialPosition;
+                            }
+                        }
+                    </script>
+
+
+                </div>
+
+            </aside>
+            <section role="main" class="content-body">
+                <header class="page-header">
+                    <h2>Bem Vindo ao Teste Marfrig</h2>
+
+                    <div class="right-wrapper text-right">
+                        <ol class="breadcrumbs">
+                            <li>
+                                <a href="@Url.Action("Index", "Home")">
+                                    <i class="fa fa-home"></i>
+                                </a>
+                            </li>
+                            <li><span>@ViewBag.BreadCrumb</span><b><span>&nbsp;@ViewBag.BreadCrumbFinal&nbsp;&nbsp;&nbsp;&nbsp;</span></b></li>
+                        </ol>
+                    </div>
+                </header>
+
+                <!-- start: page -->
+                @RenderBody()
+                <!-- end: page -->
+            </section>
+        </div>
+
+    </section>
+
+    <!-- Vendor -->
+    <script src="~/vendor/jquery/jquery.js"></script>
+    <script src="~/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+    <script src="~/vendor/popper/umd/popper.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="~/vendor/common/common.js"></script>
+    <script src="~/vendor/nanoscroller/nanoscroller.js"></script>
+
+    <!-- Specific Page Vendor -->
+    <script src="~/vendor/pnotify/pnotify.custom.js"></script>
+    @RenderSection("ScriptsSpecificVendor", required: false)
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="~/js/theme.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="~/js/theme.init.js"></script>
+    <script src="~/vendor/vue/vue.js"></script>
+    <script src="~/vendor/axios/axios.min.js"></script>
+    @* <script src="~/js/main.js"></script>*@
+
+    <!-- Examples -->
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+</html>
+
+

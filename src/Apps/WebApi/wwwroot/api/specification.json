@@ -1,0 +1,1056 @@
+{
+  "x-generator": "NSwag v13.9.4.0 (NJsonSchema v10.3.1.0 (Newtonsoft.Json v12.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CleanArchitecture API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/Animais": {
+      "get": {
+        "tags": [
+          "Animais"
+        ],
+        "operationId": "Animais_GetAllAnimais",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfListOfAnimalDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Animais"
+        ],
+        "operationId": "Animais_Create",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAnimalCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfAnimalDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Animais"
+        ],
+        "operationId": "Animais_Update",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAnimalCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfAnimalDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/Animais/{id}": {
+      "get": {
+        "tags": [
+          "Animais"
+        ],
+        "operationId": "Animais_GetCityById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfAnimalDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Animais"
+        ],
+        "operationId": "Animais_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfAnimalDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/CompraGadoItems": {
+      "get": {
+        "tags": [
+          "CompraGadoItems"
+        ],
+        "operationId": "CompraGadoItems_GetAllCompraGadoItemsWithPagination",
+        "requestBody": {
+          "x-name": "query",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetAllCompraGadoItemsWithPaginationQuery"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfPaginatedListOfCompraGadoDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/CompraGados": {
+      "post": {
+        "tags": [
+          "CompraGados"
+        ],
+        "operationId": "CompraGados_Create",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateCompraGadoCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfCompraGadoDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/Login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "operationId": "Login_Create",
+        "requestBody": {
+          "x-name": "query",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetTokenQuery"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfLoginResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Pecuaristas": {
+      "get": {
+        "tags": [
+          "Pecuaristas"
+        ],
+        "operationId": "Pecuaristas_GetAllPecuaristas",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfListOfPecuaristaDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Pecuaristas"
+        ],
+        "operationId": "Pecuaristas_Create",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePecuaristaCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfPecuaristaDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Pecuaristas"
+        ],
+        "operationId": "Pecuaristas_Update",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePecuaristaCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfPecuaristaDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/Pecuaristas/{id}": {
+      "get": {
+        "tags": [
+          "Pecuaristas"
+        ],
+        "operationId": "Pecuaristas_GetCityById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfPecuaristaDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Pecuaristas"
+        ],
+        "operationId": "Pecuaristas_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceResultOfPecuaristaDto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ServiceResultOfListOfAnimalDto": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ServiceResult"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/AnimalDto"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "AnimalDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "preco": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "descricao": {
+            "type": "string",
+            "nullable": true
+          },
+          "compraGadoItems": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CompraGadoItem"
+            }
+          }
+        }
+      },
+      "CompraGadoItem": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "quantidade": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "idCompraGado": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "compraGados": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/CompraGado"
+                }
+              },
+              "idAnimal": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "animal": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Animal"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "CompraGado": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "dataEntrega": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "nome": {
+                "type": "string",
+                "nullable": true
+              },
+              "idPecuarista": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "pecuarista": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/Pecuarista"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "Pecuarista": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "nome": {
+                "type": "string",
+                "nullable": true
+              },
+              "compraGados": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/CompraGado"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "AuditableEntity": {
+        "type": "object",
+        "x-abstract": true,
+        "additionalProperties": false,
+        "properties": {
+          "creator": {
+            "type": "string",
+            "nullable": true
+          },
+          "createDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifier": {
+            "type": "string",
+            "nullable": true
+          },
+          "modifyDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        }
+      },
+      "Animal": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AuditableEntity"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "preco": {
+                "type": "number",
+                "format": "decimal"
+              },
+              "descricao": {
+                "type": "string",
+                "nullable": true
+              },
+              "compraGadoItems": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/CompraGadoItem"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "ServiceResult": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "succeeded": {
+            "type": "boolean"
+          },
+          "error": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ServiceError"
+              }
+            ]
+          }
+        }
+      },
+      "ServiceError": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "message": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ServiceResultOfAnimalDto": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ServiceResult"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/AnimalDto"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "CreateAnimalCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "UpdateAnimalCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "preco": {
+            "type": "number",
+            "format": "decimal"
+          }
+        }
+      },
+      "ServiceResultOfPaginatedListOfCompraGadoDto": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ServiceResult"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/PaginatedListOfCompraGadoDto"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "PaginatedListOfCompraGadoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "items": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CompraGadoDto"
+            }
+          },
+          "pageIndex": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalPages": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "totalCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hasPreviousPage": {
+            "type": "boolean"
+          },
+          "hasNextPage": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CompraGadoDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataEntrega": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "idPecuarista": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pecuarista": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PecuaristaDto"
+              }
+            ]
+          }
+        }
+      },
+      "PecuaristaDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "compraGados": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/CompraGadoDto"
+            }
+          }
+        }
+      },
+      "GetAllCompraGadoItemsWithPaginationQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "idCompraGadoItem": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "pageSize": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ServiceResultOfCompraGadoDto": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ServiceResult"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/CompraGadoDto"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "CreateCompraGadoCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "nome": {
+            "type": "string",
+            "nullable": true
+          },
+          "idPecuarista": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataEntrega": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ServiceResultOfLoginResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ServiceResult"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/LoginResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "LoginResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "user": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/ApplicationUserDto"
+              }
+            ]
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ApplicationUserDto": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "GetTokenQuery": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ServiceResultOfListOfPecuaristaDto": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ServiceResult"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/PecuaristaDto"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "ServiceResultOfPecuaristaDto": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ServiceResult"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/PecuaristaDto"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "CreatePecuaristaCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "UpdatePecuaristaCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "JWT": {
+        "type": "apiKey",
+        "description": "Type into the textbox: Bearer {your JWT token}.",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "JWT": []
+    }
+  ]
+}
